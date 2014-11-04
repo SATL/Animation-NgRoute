@@ -1,0 +1,168 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 4, 2014, 10:39:18 AM
+    Author     : eslem
+*/
+/* rotate and fall */
+@-webkit-keyframes rotateFall {
+  0% {
+    -webkit-transform: rotateZ(0deg); }
+  20% {
+    -webkit-transform: rotateZ(10deg);
+    -webkit-animation-timing-function: ease-out; }
+  40% {
+    -webkit-transform: rotateZ(17deg); }
+  60% {
+    -webkit-transform: rotateZ(16deg); }
+  100% {
+    -webkit-transform: translateY(100%) rotateZ(17deg); } }
+@-moz-keyframes rotateFall {
+  0% {
+    -moz-transform: rotateZ(0deg); }
+  20% {
+    -moz-transform: rotateZ(10deg);
+    -moz-animation-timing-function: ease-out; }
+  40% {
+    -moz-transform: rotateZ(17deg); }
+  60% {
+    -moz-transform: rotateZ(16deg); }
+  100% {
+    -moz-transform: translateY(100%) rotateZ(17deg); } }
+@keyframes rotateFall {
+  0% {
+    transform: rotateZ(0deg); }
+  20% {
+    transform: rotateZ(10deg);
+    animation-timing-function: ease-out; }
+  40% {
+    transform: rotateZ(17deg); }
+  60% {
+    transform: rotateZ(16deg); }
+  100% {
+    transform: translateY(100%) rotateZ(17deg); } }
+/* scale up */
+@keyframes scaleUp {
+  from {
+    opacity: 0.3;
+    transform: scale(0.8); } }
+@-moz-keyframes scaleUp {
+  from {
+    opacity: 0.3;
+    -moz-transform: scale(0.8); } }
+@-webkit-keyframes scaleUp {
+  from {
+    opacity: 0.3;
+    -webkit-transform: scale(0.8); } }
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(100%); }
+  to {
+    -moz-transform: translateX(0); } }
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(100%); }
+  to {
+    -webkit-transform: translateX(0); } }
+/* slide in from the bottom */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%); }
+  to {
+    transform: translateY(0); } }
+@-moz-keyframes slideInUp {
+  from {
+    -moz-transform: translateY(100%); }
+  to {
+    -moz-transform: translateY(0); } }
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translateY(100%); }
+  to {
+    -webkit-transform: translateY(0); } }
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%); } }
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-100%); } }
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-100%); } }
+/* rotate out newspaper */
+@-webkit-keyframes rotateOutNewspaper {
+  to {
+    -webkit-transform: translateZ(-3000px) rotateZ(360deg);
+    opacity: 0; } }
+@-moz-keyframes rotateOutNewspaper {
+  to {
+    -moz-transform: translateZ(-3000px) rotateZ(360deg);
+    opacity: 0; } }
+@keyframes rotateOutNewspaper {
+  to {
+    transform: translateZ(-3000px) rotateZ(360deg);
+    opacity: 0; } }
+body, html {
+  margin: 0px;
+  padding: 0px; }
+
+nav.sidebar {
+  background-color: #1d1f21;
+  position: fixed;
+  width: 240px;
+  height: 100%;
+  top: 0;
+  left: -200px;
+  z-index: 1000;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  nav.sidebar:hover {
+    left: 0px; }
+    nav.sidebar:hover h3, nav.sidebar:hover a {
+      opacity: 1; }
+  nav.sidebar h3 {
+    font-size: 1.9em;
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+    color: #ffffff; }
+  nav.sidebar a {
+    display: block;
+    color: #9d9d9d;
+    font-size: 1.1em;
+    font-weight: 300;
+    padding: 1em;
+    text-decoration: none; }
+    nav.sidebar a:hover {
+      color: #ffffff; }
+    nav.sidebar a.active {
+      color: #ffffff;
+      background-color: #080808;
+      border-right: 4px solid #0d77b6; }
+
+div.wrap-body {
+  position: absolute;
+  width: 100%; }
+  div.wrap-body.ng-leave {
+    -webkit-animation: rotateFall 0.5s both ease-in;
+    -moz-animation: rotateFall 0.5s both ease-in;
+    animation: rotateFall 0.5s both ease-in; }
+  div.wrap-body.ng-enter {
+    -webkit-animation: scaleUp 0.5s both ease-in;
+    -moz-animation: scaleUp 0.5s both ease-in;
+    animation: scaleUp 0.5s both ease-in; }
+
+/*# sourceMappingURL=index.css.map */

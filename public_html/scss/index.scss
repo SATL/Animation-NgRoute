@@ -1,0 +1,116 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 4, 2014, 10:39:18 AM
+    Author     : eslem
+*/
+@import "animations.scss";
+
+$sidebar-backColor:#1d1f21;
+$nav-elemColor:#9d9d9d;
+$nav-hoverColor:#ffffff;
+$nav-backActive : #080808;
+$nav-borderActive:#0d77b6;
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+@mixin transition-delay($transition-property, $transition-time, $method, $delay) {
+    -webkit-transition: $transition-property $transition-time $method $delay;
+    -moz-transition: $transition-property $transition-time $method $delay;
+    -ms-transition: $transition-property $transition-time $method $delay;
+    -o-transition: $transition-property $transition-time $method$delay;
+    transition: $transition-property $transition-time $method $delay;
+}
+
+@mixin transform($val1, $val2){
+    transform-origin: $val1 $val2;
+    -webkit-transform-origin: $val1 $val2;
+}
+
+@mixin animation($type, $time, $val, $transition){
+    -webkit-animation:$type $time $val $transition;
+    -moz-animation:$type $time $val $transition;
+    animation:$type $time $val $transition; 
+}
+
+
+body, html{
+    margin:0px;
+    padding:0px;
+}
+
+nav.sidebar{
+    background-color: $sidebar-backColor;
+    position:fixed;
+    width: 240px;
+    height: 100%;
+    top: 0;
+    left:-200px;
+    z-index: 1000;
+    @include transition(all, 0.2s, linear);
+
+
+    &:hover{
+        left:0px;
+        h3, a{
+            opacity: 1;
+        }
+
+    }
+
+    h3{
+        font-size: 1.9em;
+        padding: 20px;
+        margin: 0;
+        font-weight: 300;
+        color:$nav-hoverColor;
+        //opacity: 0;
+        //opacity: 1;
+        // @include transition-delay(all, 0.2s, linear, 0.3s);
+    }
+
+    a{
+        display: block;
+        color: $nav-elemColor;
+        font-size: 1.1em;
+        font-weight: 300;
+        padding: 1em;
+        //opacity: 0;
+        //opacity: 1;
+        text-decoration: none;
+        //@include transition-delay(all, 0.2s, linear, 0.3s);
+
+        &:hover{
+            color: $nav-hoverColor;
+        }
+
+        &.active{
+            color: $nav-hoverColor;
+            background-color: $nav-backActive;
+            border-right: 4px solid $nav-borderActive;
+        }
+    }
+}
+
+
+div.wrap-body{
+    position:absolute;
+    width:100%;
+
+    &.ng-leave{
+        @include animation(rotateFall, .5s, both, ease-in);
+    }
+    &.ng-enter{ 
+        @include animation(scaleUp, .5s, both, ease-in);
+    }
+
+}
+
